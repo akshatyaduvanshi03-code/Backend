@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}All Posts - Simple CMS{% endblock %}
+
+{% block content %}
+  <h2>Blog Posts</h2>
+
+  {% if posts %}
+    {% for post in posts %}
+      <div class="post-card">
+        <h3 class="post-title">
+          <a href="/posts/{{ post._id }}">{{ post.title }}</a>
+        </h3>
+        <div class="post-meta">
+          By {{ post.author }}<br>
+          {{ post.created_at }}
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>No posts found. <a href="/posts/new">Create the first post!</a></p>
+  {% endif %}
+{% endblock %}

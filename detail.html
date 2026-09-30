@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} - Simple CMS{% endblock %}
+
+{% block content %}
+  <article class="post-card">
+    <h2 style="margin-top: 0; margin-bottom: 8px;">{{ post.title }}</h2>
+    <div class="post-meta">
+      By {{ post.author }}<br>
+      {{ post.created_at }}
+    </div>
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 16px 0;">
+    <div class="post-content">{{ post.content }}</div>
+  </article>
+
+  <a href="/posts" class="back-link">&larr; Back to all posts</a>
+{% endblock %}
